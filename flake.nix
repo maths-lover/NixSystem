@@ -1,12 +1,18 @@
 {
   description = "NixOS 25.05 flake (multi-host, modular)";
   inputs = {
-    # Use NixOS 25.05 stable and NixOS unstable for latest packages, plus agenix for secrets
+    # Use NixOS 25.05 stable and NixOS unstable for latest packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    # Flake: agenix for secrets
     agenix.url = "github:ryantm/agenix";
+
+    # Flake: niri window manager
+    niri.url = "github:sodiboo/niri-flake";
+    niri.inputs.nixpkgs.follows = "nixpkgs";   # build against 25.05
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, agenix }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... } @ inputs:
     let
       system = "x86_64-linux";
       # Overlay to include unstable nixpkgs as an 'unstable' package set
@@ -16,18 +22,32 @@
           config.allowUnfree = true;
         };
       });
+
+      agenix = inputs.agenix;
+      niri = inputs.niri;
     in {
       nixosConfigurations = {
+
+        #################################
         # Local workstation configuration
+        #################################
         local = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit inputs; };
           modules = [
-            { nixpkgs.overlays = [ unstableOverlay ]; }
+            { nixpkgs.overlays = [
+                unstableOverlay
+                niri.overlays.niri
+              ];
+            }
             ./hosts/local.nix         # imports hardware, common, and local modules
             agenix.nixosModules.default
           ];
         };
+
+        ###########################################
         # Remote server configuration (placeholder)
+        ###########################################
         remote = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
@@ -37,7 +57,10 @@
           ];
         };
       };
+
+      ###################################################
       # DevShell providing agenix CLI for editing secrets
+      ###################################################
       devShells.${system}.default = nixpkgs.legacyPackages.${system}.mkShell {
         packages = [ agenix.packages.${system}.default ];
       };

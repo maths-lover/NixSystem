@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # (no miscellaneous config yet)
+  imports = [
+    ./fonts.nix
+  ];
 }
