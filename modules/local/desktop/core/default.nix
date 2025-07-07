@@ -6,6 +6,7 @@
     ./bluetooth.nix
     ./browser.nix
     ./terminal.nix
+    ./launcher.nix
   ];
 }
 

@@ -14,7 +14,7 @@
     # Communication apps
     pkgs.telegram-desktop
     pkgs.slack
-    pkgs.zoom-us
+    pkgs.unstable.zoom-us
 
     # Security tools
     pkgs.zenmap
