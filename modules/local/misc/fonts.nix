@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = [
+  fonts.packages = [
     pkgs.nerd-fonts.martian-mono
     pkgs.nerd-fonts.inconsolata
     pkgs.nerd-fonts.iosevka

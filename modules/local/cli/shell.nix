@@ -13,6 +13,7 @@
     pkgs.fzf-git-sh
     pkgs.starship
     pkgs.bat
+    pkgs.zoxide
   ];
 
   programs.zsh.enable = true;
