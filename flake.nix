@@ -9,8 +9,16 @@
     agenix.url = "github:ryantm/agenix";
 
     # Flake: niri window manager
-    niri.url = "github:sodiboo/niri-flake";
-    niri.inputs.nixpkgs.follows = "nixpkgs";   # build against 25.05
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";   # build against 25.05
+    };
+
+    # Flake: quickshell
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { self, nixpkgs, nixpkgs-unstable, ... } @ inputs:
     let

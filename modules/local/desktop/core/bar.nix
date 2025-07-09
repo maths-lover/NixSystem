@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    pkgs.kitty                     # Kitty terminal emulator
+    quickshell.packages.<system>.default
   ];
 }

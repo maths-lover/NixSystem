@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # (no gaming-specific configuration yet)
+  environment.systemPackages = [
+    pkgs.osu-lazer-bin
+  ];
 }

@@ -10,6 +10,8 @@
 
     # Screen recording
     pkgs.obs-studio
+    pkgs.xdg-desktop-portal
+    pkgs.xdg-desktop-portal-gtk
 
     # Communication apps
     pkgs.telegram-desktop

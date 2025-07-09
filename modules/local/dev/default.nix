@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./python.nix
+  ];
+
   environment.systemPackages = [
     # Use latest Zed editor from unstable package set
     # my main coding editor
