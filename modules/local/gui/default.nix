@@ -2,6 +2,9 @@
 
 {
   environment.systemPackages = [
+    # Note taking with obsidian
+    pkgs.obsidian
+
     # Digital art
     pkgs.krita
 
