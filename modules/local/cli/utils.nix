@@ -7,6 +7,9 @@
     pkgs.fastfetch
     pkgs.zip
     pkgs.unzip
+
+    # screenshot
     pkgs.grim
+    pkgs.slurp
   ];
 }
