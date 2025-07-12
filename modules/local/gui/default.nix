@@ -5,6 +5,9 @@
     enable = true;
   };
   environment.systemPackages = [
+    # neovim gui editor
+    pkgs.neovide
+
     # Note taking with obsidian
     pkgs.obsidian
 
