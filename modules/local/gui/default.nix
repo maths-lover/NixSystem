@@ -14,6 +14,9 @@
     # Digital art
     pkgs.krita
 
+    # simple image viewer
+    pkgs.imv
+
     # Music
     pkgs.spotify
 
