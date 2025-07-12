@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Define the primary local user account
@@ -6,7 +6,7 @@
     isNormalUser = true;
     description = "Suraj Pal Singh";
     extraGroups = [ "networkmanager" "wheel" ];  # enable sudo and network control
-    packages = with pkgs; [ ];
+    packages = [ ];
     shell = pkgs.zsh;
     # passwordFile = config.age.secrets.tailscale_secret.path;
   };

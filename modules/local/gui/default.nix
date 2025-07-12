@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  xdg.portal = {
+    enable = true;
+  };
   environment.systemPackages = [
     # Note taking with obsidian
     pkgs.obsidian
@@ -20,6 +23,7 @@
     pkgs.telegram-desktop
     pkgs.slack
     pkgs.unstable.zoom-us
+    pkgs.discord
 
     # Security tools
     pkgs.zenmap

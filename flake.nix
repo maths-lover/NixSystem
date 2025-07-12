@@ -19,6 +19,12 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Flake: nix-ld
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { self, nixpkgs, nixpkgs-unstable, ... } @ inputs:
     let
@@ -33,6 +39,7 @@
 
       agenix = inputs.agenix;
       niri = inputs.niri;
+      nix-ld = inputs.nix-ld;
     in {
       nixosConfigurations = {
 
@@ -43,13 +50,16 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            { nixpkgs.overlays = [
+            {
+              nixpkgs.overlays = [
                 unstableOverlay
                 niri.overlays.niri
               ];
             }
             ./hosts/local.nix         # imports hardware, common, and local modules
             agenix.nixosModules.default
+            nix-ld.nixosModules.nix-ld
+            { programs.nix-ld.dev.enable = true; }
           ];
         };
 

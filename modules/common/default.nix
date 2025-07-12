@@ -5,6 +5,6 @@
     ./system.nix
     ./networking.nix
     ./core_packages.nix
+    ./gc.nix
   ];
 }
-
