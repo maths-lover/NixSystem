@@ -12,6 +12,10 @@
 
     # well git has to be the VCS
     pkgs.gitFull
-    pkgs.delta # nice diff viewer
+    # nice diff viewer
+    pkgs.delta
+
+    # required for Zed settings and JSON in general
+    pkgs.unstable.vscode-json-languageserver
   ];
 }
