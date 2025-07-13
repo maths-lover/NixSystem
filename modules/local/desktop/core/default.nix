@@ -7,6 +7,7 @@
     ./browser.nix
     ./terminal.nix
     ./launcher.nix
+    ./locker.nix
   ];
 }
 
