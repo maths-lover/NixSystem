@@ -3,7 +3,13 @@
 {
   xdg.portal = {
     enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common = {
+      default = [ "gtk" ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+    };
   };
+
   environment.systemPackages = [
     # neovim gui editor
     pkgs.neovide
