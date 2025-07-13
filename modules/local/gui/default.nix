@@ -25,6 +25,7 @@
 
     # Music
     pkgs.spotify
+    pkgs.playerctl
 
     # Screen recording
     pkgs.obs-studio
