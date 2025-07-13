@@ -11,6 +11,9 @@
   };
 
   environment.systemPackages = [
+    # via for keychron Q1 Pro
+    pkgs.unstable.via
+
     # neovim gui editor
     pkgs.neovide
 
