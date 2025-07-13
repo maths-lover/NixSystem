@@ -8,6 +8,7 @@
     ./terminal.nix
     ./launcher.nix
     ./locker.nix
+    ./cursor.nix
   ];
 }
 
