@@ -33,5 +33,8 @@
 
     # Security tools
     pkgs.zenmap
+
+    # pdf reader
+    pkgs.zathura
   ];
 }
