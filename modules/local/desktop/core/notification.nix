@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = [
-    pkgs.hyprlock
+    pkgs.mako
+    pkgs.libnotify
   ];
 }

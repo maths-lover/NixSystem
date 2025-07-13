@@ -46,5 +46,8 @@
 
     # pdf reader
     pkgs.zathura
+
+    # gtk settings
+    pkgs.nwg-look
   ];
 }

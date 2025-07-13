@@ -9,6 +9,7 @@
     ./launcher.nix
     ./locker.nix
     ./cursor.nix
+    ./notification.nix
   ];
 }
 
