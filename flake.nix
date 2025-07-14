@@ -14,12 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";   # build against 25.05
     };
 
-    # Flake: quickshell
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Flake: nix-ld
     nix-ld = {
       url = "github:Mic92/nix-ld";

@@ -2,6 +2,6 @@
 
 {
   environment.systemPackages = [
-    quickshell.packages.<system>.default
+    pkgs.unstable.quickshell
   ];
 }
