@@ -3,11 +3,16 @@
 {
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    xdgOpenUsePortal = true;
     config.common = {
       default = [ "gtk" ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "hyprland" "gtk" ];
     };
+    config.hyprland.default = [ "gtk" ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   environment.systemPackages = [
@@ -33,13 +38,15 @@
     # Screen recording
     pkgs.obs-studio
     pkgs.xdg-desktop-portal
-    pkgs.xdg-desktop-portal-gtk
+    pkgs.xdg-desktop-portal-hyprland
+    #pkgs.xdg-desktop-portal-gtk
 
     # Communication apps
     pkgs.telegram-desktop
     pkgs.slack
     pkgs.unstable.zoom-us
     pkgs.discord
+    pkgs.teams
 
     # Security tools
     pkgs.zenmap
