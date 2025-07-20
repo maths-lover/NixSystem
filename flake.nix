@@ -19,6 +19,8 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser.url = "github:maths-lover/nix_zen_browser";
   };
   outputs = { self, nixpkgs, nixpkgs-unstable, ... } @ inputs:
     let
@@ -34,6 +36,7 @@
       agenix = inputs.agenix;
       niri = inputs.niri;
       nix-ld = inputs.nix-ld;
+      zen-browser = inputs.zen-browser;
     in {
       nixosConfigurations = {
 
@@ -48,6 +51,7 @@
               nixpkgs.overlays = [
                 unstableOverlay
                 niri.overlays.niri
+                zen-browser.overlays.default
               ];
             }
             ./hosts/local.nix         # imports hardware, common, and local modules
