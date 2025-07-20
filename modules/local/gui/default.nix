@@ -46,7 +46,7 @@
     pkgs.slack
     pkgs.unstable.zoom-us
     pkgs.discord
-    pkgs.teams
+    pkgs.unstable.teams
 
     # Security tools
     pkgs.zenmap
