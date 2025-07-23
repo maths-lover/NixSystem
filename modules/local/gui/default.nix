@@ -4,14 +4,8 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    config.common = {
-      default = [ "gtk" ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "hyprland" "gtk" ];
-    };
-    config.hyprland.default = [ "gtk" ];
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
     ];
   };
 
@@ -39,7 +33,6 @@
     pkgs.obs-studio
     pkgs.xdg-desktop-portal
     pkgs.xdg-desktop-portal-hyprland
-    #pkgs.xdg-desktop-portal-gtk
 
     # Communication apps
     pkgs.telegram-desktop
