@@ -3,6 +3,7 @@
 {
   imports = [
     ./zeditor.nix
+    ./docker.nix
   ];
 
   environment.systemPackages = [
@@ -13,5 +14,8 @@
 
     # for wakapi/wakatime
     pkgs.wakatime-cli
+
+    # for api testing
+    pkgs.hoppscotch
   ];
 }

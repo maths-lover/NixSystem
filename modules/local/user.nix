@@ -5,7 +5,7 @@
   users.users.surajp = {
     isNormalUser = true;
     description = "Suraj Pal Singh";
-    extraGroups = [ "networkmanager" "wheel" ];  # enable sudo and network control
+    extraGroups = [ "networkmanager" "wheel" "docker" ];  # enable sudo and network control
     packages = [ ];
     shell = pkgs.zsh;
     # passwordFile = config.age.secrets.tailscale_secret.path;

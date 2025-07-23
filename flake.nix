@@ -14,12 +14,6 @@
       inputs.nixpkgs.follows = "nixpkgs";   # build against 25.05
     };
 
-    # Flake: nix-ld
-    nix-ld = {
-      url = "github:Mic92/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser.url = "github:maths-lover/nix_zen_browser";
   };
   outputs = { self, nixpkgs, nixpkgs-unstable, ... } @ inputs:
@@ -35,7 +29,6 @@
 
       agenix = inputs.agenix;
       niri = inputs.niri;
-      nix-ld = inputs.nix-ld;
       zen-browser = inputs.zen-browser;
     in {
       nixosConfigurations = {
@@ -56,8 +49,7 @@
             }
             ./hosts/local.nix         # imports hardware, common, and local modules
             agenix.nixosModules.default
-            nix-ld.nixosModules.nix-ld
-            { programs.nix-ld.dev.enable = true; }
+            { programs.nix-ld.enable = true; }
           ];
         };
 
