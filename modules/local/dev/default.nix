@@ -4,6 +4,7 @@
   imports = [
     ./zeditor.nix
     ./docker.nix
+    ./virtualbox.nix
   ];
 
   environment.systemPackages = [
