@@ -16,6 +16,10 @@
       };
     }
   ];
+  # kernel params for virtualbox to disable kvm module
+  boot.kernelParams = [
+    "kvm.enable_virt_at_load=0"
+  ];
 
   # filesystem support
   boot.supportedFilesystems = [ "ext4" "vfat" "ntfs" ];
