@@ -18,5 +18,8 @@
 
     # for api testing
     pkgs.hoppscotch
+
+    # aws cli 2, as I work with it
+    pkgs.awscli2
   ];
 }
